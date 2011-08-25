@@ -4,6 +4,7 @@ import gnu.io.CommPortIdentifier;
 import gnu.io.NoSuchPortException;
 import gnu.io.ParallelPort;
 import gnu.io.PortInUseException;
+import gnu.io.UnsupportedCommOperationException;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.Enumeration;
@@ -30,6 +31,8 @@ public class TesteImpressao {
         TesteImpressao t = new TesteImpressao();
         try {
             t.execute();
+        } catch (UnsupportedCommOperationException ex) {
+            Logger.getLogger(TesteImpressao.class.getName()).log(Level.SEVERE, null, ex);
         } catch (NoSuchPortException ex) {
             Logger.getLogger(TesteImpressao.class.getName()).log(Level.SEVERE, null, ex);
         } catch (PortInUseException ex) {
@@ -39,7 +42,7 @@ public class TesteImpressao {
         }
     }
     
-    private void execute() throws NoSuchPortException, PortInUseException, IOException {
+    private void execute() throws NoSuchPortException, PortInUseException, IOException, UnsupportedCommOperationException {
         Enumeration ports = CommPortIdentifier.getPortIdentifiers();
         while (ports.hasMoreElements()) {
             System.out.println("Porta : " + ((CommPortIdentifier) ports.nextElement()).getName());
@@ -62,7 +65,8 @@ public class TesteImpressao {
         System.out.println("port.name = " + port.getName());
 
         // open the parallel port -- open(App name, timeout)
-        parallelPort = (ParallelPort) port.open("CommTest", 50);
+        parallelPort = (ParallelPort) port.open("CommTest", 5000);
+//        parallelPort.setMode(1);
         outputStream = parallelPort.getOutputStream();
         
         byte[] byteArray = comando.getBytes("UTF8");
