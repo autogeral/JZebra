@@ -63,20 +63,33 @@ public class NovoTesteLPT1 {
 //            saida.println(comandoImpressora);
 
             ///////////////////////
-            saida.println("N");
-            saida.println(EtiquetaZebraTLP2844.getRepresentacaoAlturaEtiqueta(500, 30, 15));
-            saida.println(EtiquetaZebraTLP2844.getRepresentacaoLarguraEtiqueta(400));
-            saida.println(EtiquetaZebraTLP2844.getRepresentacaoVelocidadeImpressao(5));
-            saida.println(EtiquetaZebraTLP2844.getRepresentacaoDensidadeImpressao(10));
-            saida.println(EtiquetaZebraTLP2844.getRepresentacaoHorientacaoImpressao("T"));
-            saida.println(EtiquetaZebraTLP2844.getRepresentacaoCarachterSet(8, 3, 351));
-            saida.println(EtiquetaZebraTLP2844.getRepresentacaoLabel(50, 10, 0, 1, 1, 1, "ESTA EH UMA IMPRESSAO TESTE"));
-            saida.println(EtiquetaZebraTLP2844.getRepresentacaoCodigoBarras(50, 25, 0, 2, 2, 6, 70,  "256452"));
-            saida.println("d5,1");
-            saida.println(EtiquetaZebraTLP2844.getRepresentacaoImprimir());
+//            saida.println("N");
+//            saida.println(EtiquetaZebraTLP2844.getRepresentacaoAlturaEtiqueta(500, 30, 15));
+//            saida.println(EtiquetaZebraTLP2844.getRepresentacaoLarguraEtiqueta(400));
+//            saida.println(EtiquetaZebraTLP2844.getRepresentacaoVelocidadeImpressao(5));
+//            saida.println(EtiquetaZebraTLP2844.getRepresentacaoDensidadeImpressao(10));
+//            saida.println(EtiquetaZebraTLP2844.getRepresentacaoHorientacaoImpressao("T"));
+//            saida.println(EtiquetaZebraTLP2844.getRepresentacaoCarachterSet(8, 3, 351));
+//            saida.println(EtiquetaZebraTLP2844.getRepresentacaoLabel(50, 10, 0, 1, 1, 1, "ESTA EH UMA IMPRESSAO TESTE"));
+//            saida.println(EtiquetaZebraTLP2844.getRepresentacaoCodigoBarras(50, 25, 0, 2, 2, 6, 70,  "256452"));
+//            saida.println("d5,1");
+//            saida.println(EtiquetaZebraTLP2844.getRepresentacaoImprimir());
 
 //            imprimeSaida(saida);
 
+            String array[] = new String[11];
+            array[0] = "Marcos";
+            array[1] = "012404";
+            array[2] = "15300117";
+            array[3] = "09/08/2011";
+            array[4] = "Aeroporto de Congonhas";
+            array[5] = "Itu - SP";
+            array[6] = "Cartão Crédito";
+            array[7] = "D";
+            array[8] = "1";
+            array[9] = "R$ 41,00";
+            array[10] = "CONTABILIDADE";
+            ModeloTicketBalcao.imprimeTicket(saida, array);
             saida.close();
             writer.close();
 
@@ -154,9 +167,9 @@ public class NovoTesteLPT1 {
         saida.println("FE");
         
         saida.println("FR\"TICKET\"");
+        saida.println("d5,1");
 
 
         saida.println("P1");
-        saida.println("d5,1");
     }
 }
