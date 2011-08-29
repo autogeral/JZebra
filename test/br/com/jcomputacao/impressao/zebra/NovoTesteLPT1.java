@@ -72,6 +72,7 @@ public class NovoTesteLPT1 {
             saida.println(EtiquetaZebraTLP2844.getRepresentacaoCarachterSet(8, 3, 351));
             saida.println(EtiquetaZebraTLP2844.getRepresentacaoLabel(50, 10, 0, 1, 1, 1, "ESTA EH UMA IMPRESSAO TESTE"));
             saida.println(EtiquetaZebraTLP2844.getRepresentacaoCodigoBarras(50, 25, 0, 2, 2, 6, 70,  "256452"));
+            saida.println("d5,1");
             saida.println(EtiquetaZebraTLP2844.getRepresentacaoImprimir());
 
 //            imprimeSaida(saida);
@@ -108,9 +109,10 @@ public class NovoTesteLPT1 {
     }
 
     private static void imprimeSaida(PrintWriter saida) {
+        saida.println("FS\"TICKET\"");
         saida.println("N");
-        saida.println("Q100,0");
-        saida.println("q5524");
+        saida.println("Q200,0");
+        saida.println("q500");
         saida.println("S5");
         saida.println("D10");
         saida.println("ZT");
@@ -149,6 +151,12 @@ public class NovoTesteLPT1 {
         saida.println("LO500,380,80,0");
         saida.println("A500,390,0,3,1,1,N,\"Pag:177 F25\"");
 
+        saida.println("FE");
+        
+        saida.println("FR\"TICKET\"");
+
+
         saida.println("P1");
+        saida.println("d5,1");
     }
 }
