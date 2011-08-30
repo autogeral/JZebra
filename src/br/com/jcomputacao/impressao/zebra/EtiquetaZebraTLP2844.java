@@ -53,39 +53,39 @@ Fonts 1 - 5 are fixed pitch.
 2 180 degrees
 3 270 degrees
      * @param tipoCodigoBarras (nome do padrão || tipoCodigoBarras || larguraCodBarras)
-     *  Code 39 std. or extended 3 1-10
-        Code 39 with check digit 3C 1-10
-        Code 93 9 1-10
-        Code 128 UCC
-        Serial Shipping Container Code 0 1-10
-        Code 128 auto A, B, C modes 1 1-10
-        Code 128 mode A 1A 1-10
-        Code 128 mode B 1B 1-10
-        Code 128 mode C 1C 1-10
-        Codabar K 1-10
-        EAN8 E80 2-4
-        EAN8 2 digit add-on E82 2-4
-        EAN8 5 digit add-on E85 2-4
-        EAN13 E30 2-4
-        EAN13 2 digit add-on E32 2-4
-        EAN13 5 digit add-on E35 2-4
-        German Post Code 2G 3-4
-        Interleaved 2 of 5 2 1-10
-        Interleaved 2 of 5 with mod 10 check digit 2C 1-10
-        Interleaved 2 of 5 with human readable
-        check digit 2D 1-10
-        Postnet 5, 9, 11 & 13 digit P —
-        Japanese Postnet J —
-        UCC/EAN 128* 1E 1-10
-        UPC A UA0 2-4
-        UPC A 2 digit add-on UA2 2-4
-        UPC A 5 digit add-on UA5 2-4
-        UPC E UE0 2-4
-        UPC E 2 digit add-on UE2 2-4
-        UPC E 5 digit add-on UE5 2-4
-        UPC Interleaved 2 of 5 2U 1-10
-        Plessey (MSI-1) with mod. 10 check digit L —
-        MSI-3 with mod. 10 check digit M —
+     *  <br/>Code 39 std. or extended 3 1-10
+        <br/>Code 39 with check digit 3C 1-10
+        <br/>Code 93 9 1-10
+        <br/>Code 128 UCC
+        <br/>Serial Shipping Container Code 0 1-10
+        <br/>Code 128 auto A, B, C modes 1 1-10
+        <br/>Code 128 mode A 1A 1-10
+        <br/>Code 128 mode B 1B 1-10
+        <br/>Code 128 mode C 1C 1-10
+        <br/>Codabar K 1-10
+        <br/>EAN8 E80 2-4
+        <br/>EAN8 2 digit add-on E82 2-4
+        <br/>EAN8 5 digit add-on E85 2-4
+        <br/>EAN13 E30 2-4
+        <br/>EAN13 2 digit add-on E32 2-4
+        <br/>EAN13 5 digit add-on E35 2-4
+        <br/>German Post Code 2G 3-4
+        <br/>Interleaved 2 of 5 2 1-10
+        <br/>Interleaved 2 of 5 with mod 10 check digit 2C 1-10
+        <br/>Interleaved 2 of 5 with human readable
+        <br/>check digit 2D 1-10
+        <br/>Postnet 5, 9, 11 & 13 digit P —
+        <br/>Japanese Postnet J —
+        <br/>UCC/EAN 128* 1E 1-10
+        <br/>UPC A UA0 2-4
+        <br/>UPC A 2 digit add-on UA2 2-4
+        <br/>UPC A 5 digit add-on UA5 2-4
+        <br/>UPC E UE0 2-4
+        <br/>UPC E 2 digit add-on UE2 2-4
+        <br/>UPC E 5 digit add-on UE5 2-4
+        <br/>UPC Interleaved 2 of 5 2U 1-10
+        <br/>Plessey (MSI-1) with mod. 10 check digit L —
+        <br/>MSI-3 with mod. 10 check digit M —
      *
      * @param larguraEmDots
      * Wide bar width in dots.
@@ -95,10 +95,10 @@ Fonts 1 - 5 are fixed pitch.
      * @param texto
      * @return
      */
-    public static String getRepresentacaoCodigoBarras(int posX, int posY, int horientacao, int tipoCodigoBarras,
-            int larguraCodBarras, int larguraEmDots, int algumaCoisa, String texto ){
+    public static String getRepresentacaoCodigoBarras(int posX, int posY, int horientacao, String tipoCodigoBarras,
+            int larguraCodBarras, int larguraEmDots, int alturaEmDots, boolean exibeCodigo, String texto ){
         return "B"+posX+","+posY+","+horientacao+","+tipoCodigoBarras+","+larguraCodBarras+","+larguraEmDots+
-                ","+algumaCoisa+",B,\""+texto+"\"";
+                ","+alturaEmDots+","+(exibeCodigo?"B":"N")+",\""+texto+"\"";
     }
 
     public static String getRepresentacaoLinha(int inicioX, int inicioY, int tamanhoX,

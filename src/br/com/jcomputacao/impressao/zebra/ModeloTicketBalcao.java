@@ -14,8 +14,8 @@ import java.io.PrintWriter;
 public class ModeloTicketBalcao {
 
     public static void imprimeTicket(PrintWriter pw, String[] array){
-        pw.println("N");
-        pw.println("FS\"TICKET\"");
+//        pw.println("N");
+//        pw.println("FS\"TICKET\"");
         pw.println("N");
         pw.println("Q600,0");
         pw.println("q680");
@@ -71,19 +71,21 @@ public class ModeloTicketBalcao {
         pw.println(EtiquetaZebraTLP2844.getRepresentacaoLabel(200, 745, 0, 2, 1, 2, array[8]));
         pw.println(EtiquetaZebraTLP2844.getRepresentacaoLabel(400, 745, 0, 2, 2, 2, array[9]));
 
-        pw.println(EtiquetaZebraTLP2844.getRepresentacaoLabel(230, 790, 0, 1, 1, 2, "Reclamações 156"));
-        pw.println(EtiquetaZebraTLP2844.getRepresentacaoLabel(20, 820, 0, 1, 1, 2, "Exija sempre ao motorista o recibo da Vermelho e Branco"));
-        pw.println(EtiquetaZebraTLP2844.getRepresentacaoLabel(90, 850, 0, 3, 1, 2, "PAGAMENTO DIRETO AO MOTORISTA"));
+        pw.println(EtiquetaZebraTLP2844.getRepresentacaoCodigoBarras(250, 780, 0, "1C", 2, 400, 100, false ,array[2]));
 
-        pw.println(EtiquetaZebraTLP2844.getRepresentacaoLinha(5, 895, 600, 1));
-        pw.println(EtiquetaZebraTLP2844.getRepresentacaoLabel(170, 905, 0, 1, 2, 2, "VIA "+array[10]));
-        pw.println(EtiquetaZebraTLP2844.getRepresentacaoLinha(5, 930, 600, 1));
+        pw.println(EtiquetaZebraTLP2844.getRepresentacaoLabel(230, 890, 0, 1, 1, 2, "Reclamações 156"));
+        pw.println(EtiquetaZebraTLP2844.getRepresentacaoLabel(20, 920, 0, 1, 1, 2, "Exija sempre ao motorista o recibo da Vermelho e Branco"));
+        pw.println(EtiquetaZebraTLP2844.getRepresentacaoLabel(90, 950, 0, 3, 1, 2, "PAGAMENTO DIRETO AO MOTORISTA"));
 
-        pw.println("FE");
+        pw.println(EtiquetaZebraTLP2844.getRepresentacaoLinha(5, 1005, 600, 1));
+        pw.println(EtiquetaZebraTLP2844.getRepresentacaoLabel(170, 1025, 0, 1, 2, 2, "VIA "+array[10]));
+        pw.println(EtiquetaZebraTLP2844.getRepresentacaoLinha(5, 1045, 600, 1));
 
-        pw.println("FR\"TICKET\"");
-        pw.println("OC");
-        pw.println("d5,0");
+//        pw.println("FE");
+
+//        pw.println("FR\"TICKET\"");
+//        pw.println("OC");
+//        pw.println("d5,0");
 
 
         pw.println("P1");
